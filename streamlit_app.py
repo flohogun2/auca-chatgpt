@@ -41,15 +41,15 @@ import calendar
 import requests
 from datetime import date, datetime, timedelta
 from time import time
-from dotenv import load_dotenv
+
 import os
 
 schedule = {}
 today = datetime.now()
 hours = (9, 17)   # open hours
 
-load_dotenv() 
-API_KEY = os.getenv("OPENAI_API_KEY")
+
+API_KEY = os.environ("API_KEY")
 
 # get today's date
 def todayDate():
