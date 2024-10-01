@@ -528,7 +528,7 @@ if st.button('Valider'):
     messages, functions=functions
     )
     
-    if content==chat_response["output"]:
+    if chat_response["output"]:
         st.session_state.chat_history.extend([
         HumanMessage(content=user_input),
         AIMessage(content=chat_response["output"])
