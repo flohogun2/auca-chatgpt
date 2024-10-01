@@ -49,7 +49,7 @@ today = datetime.now()
 hours = (9, 17)   # open hours
 
 API_KEY = os.getenv("OPENAI_API_KEY")
-
+API_KEY ="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"
 # get today's date
 def todayDate():
     return today.strftime('%m/%d/%y')
