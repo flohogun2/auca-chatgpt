@@ -1,0 +1,8 @@
+name: Greeting on variable day
+
+on:
+  workflow_dispatch
+
+env:
+  API_KEY: ${{API_KEY}}
+
