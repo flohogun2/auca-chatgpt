@@ -41,11 +41,15 @@ import calendar
 import requests
 from datetime import date, datetime, timedelta
 from time import time
-
+from dotenv import load_dotenv
+import os
 
 schedule = {}
 today = datetime.now()
 hours = (9, 17)   # open hours
+
+load_dotenv() 
+API_KEY = os.getenv("OPENAI_API_KEY")
 
 # get today's date
 def todayDate():
@@ -129,7 +133,6 @@ def scheduleTime(dateTime):
     else:
         return '%s is not a valid time, time must be in format hh:mm'
 
-API_KEY ="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"
 
 
 llm = ChatOpenAI(temperature=0, verbose=True, openai_api_key=API_KEY)
