@@ -47,8 +47,8 @@ import os
 schedule = {}
 today = datetime.now()
 hours = (9, 17)   # open hours
-
-API_KEY = os.environ("API_KEY")
+print(os.environ)
+API_KEY = os.environ("API_KEY","")
 # API_KEY ="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"
 # get today's date
 def todayDate():
