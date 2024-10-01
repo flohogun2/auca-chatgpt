@@ -49,7 +49,7 @@ today = datetime.now()
 hours = (9, 17)   # open hours
 print(os.environ)
 
-API_KEY = os.environ("API_KEY","")
+API_KEY = st.secrets["API_KEY"]
 st.write("DB username:", st.secrets["API_KEY"])
 # get today's date
 def todayDate():
