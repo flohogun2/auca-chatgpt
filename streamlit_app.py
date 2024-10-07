@@ -1,5 +1,6 @@
 # coding: latin-1
 import locale
+import requests
 #locale.setlocale(locale.LC_ALL, 'fr_FR')
 
 
@@ -213,6 +214,21 @@ def appointment_booking(arguments):
                                     ],
                                 },
                             }
+                            event ={"EventTask":{"lstDynamicFieldGen":[],"IDMail":"-1","IdTVA":"-1",
+                              "IDFolderEntity":"-1","OrganizerWaitingResponse":"0","IdEventTaskParent":"-1",
+                              "IDMainContact":"-1","IDMainContactEntity":"-1","IdCategoryUserRole":"-1",
+                              "IdCategoryParentEventTask":"-1","IdMeetingTask":"-1","IdTicket":"-1",
+                              "IdUserCreator":"1","IdUserOrganizer":"508","IdUserModifier":"1",
+                              "Name":email_address,"TimeBegin_S":start_date_time.strftime("%Y-%m-%dT%H:%M:%S"),
+                              "TimeEnd_S":end_date_time.strftime("%Y-%m-%dT%H:%M:%S"),"Location":"Paris","ReminderDelay":"1",
+                              "Priority":"1","EventTaskStatus":"-1","Type":"0","IdCategory":"878","IsPrivate":"false","IdEntity":"-1",
+                              "IdEntityParent":"-1","Use_Project":"false","Locked":"false","Deleted":"false","IdProjectCampaign":"-1",
+                              "IsDeleted":"false"},"UserID":"1","UserContactID":"508"}
+
+                            data_json = json.dumps(event)
+                            headers = {'Content-type': 'application/json'}
+                            url = "http://51.178.133.91/COC_WEBSERVICE_HEALTHFITNESS/ServiceAddContact.svc/json/AddEventTaskReturnObject"
+                            response = requests.post(url, data=data_json, headers=headers)
                            # service.events().insert(calendarId='primary', body=event).execute()
                             return "Rendez-vous ajouté avec succès."
                         else:
@@ -244,6 +260,21 @@ def appointment_booking(arguments):
                                     ],
                                 },
                             }
+                            event ={"EventTask":{"lstDynamicFieldGen":[],"IDMail":"-1","IdTVA":"-1",
+                              "IDFolderEntity":"-1","OrganizerWaitingResponse":"0","IdEventTaskParent":"-1",
+                              "IDMainContact":"-1","IDMainContactEntity":"-1","IdCategoryUserRole":"-1",
+                              "IdCategoryParentEventTask":"-1","IdMeetingTask":"-1","IdTicket":"-1",
+                              "IdUserCreator":"1","IdUserOrganizer":"508","IdUserModifier":"1",
+                              "Name":email_address,"TimeBegin_S":start_date_time.strftime("%Y-%m-%dT%H:%M:%S"),
+                              "TimeEnd_S":end_date_time.strftime("%Y-%m-%dT%H:%M:%S"),"Location":"Paris","ReminderDelay":"1",
+                              "Priority":"1","EventTaskStatus":"-1","Type":"0","IdCategory":"878","IsPrivate":"false","IdEntity":"-1",
+                              "IdEntityParent":"-1","Use_Project":"false","Locked":"false","Deleted":"false","IdProjectCampaign":"-1",
+                              "IsDeleted":"false"},"UserID":"1","UserContactID":"508"}
+
+                            data_json = json.dumps(event)
+                            headers = {'Content-type': 'application/json'}
+                            url = "http://51.178.133.91/COC_WEBSERVICE_HEALTHFITNESS/ServiceAddContact.svc/json/AddEventTaskReturnObject"
+                            response = requests.post(url, data=data_json, headers=headers)
                           #  service.events().insert(calendarId='primary', body=event).execute()
                             return "Rendez-vous ajouté avec succès."
                         else:
