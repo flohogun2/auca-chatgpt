@@ -47,6 +47,7 @@ import os
 
 schedule = {}
 today = datetime.now()
+tomorow = datetime.now() + timedelta(days=1)
 hours = (9, 17)   # open hours
 
 limit1 = datetime.strptime("10:00:00", "%H:%M:%S").time()
@@ -480,7 +481,7 @@ Instructions:
 - Lorsqu'un utilisateur demande une date ou une heure de reprogrammation du rendez-vous en cours, vous devez alors demander uniquement les détails du nouveau rendez-vous.
 - Si l'utilisateur n'a pas fourni le jour, le mois en indiquant l'heure du rendez-vous souhaité, vous devrez alors demander des éclaircissements.
 - Si l'utilisateur n'a pas fourni l'année en indiquant l'heure du rendez-vous souhaité, l'année est alors {date.today().strftime("%Y")}
-- Si l'utilisateur propose un jour de la semaine, la date du rendez-vous proposé sera le jour le plus proche d'aujourd'hui et l'année sera {date.today().strftime("%Y")}
+- Si l'utilisateur veut un rendez-vous {day_list[tomorow.weekday()]} alors demander si il s'agit de demain.
 
 Assurez-vous de suivre attentivement les instructions lors du traitement de la demande.
 
