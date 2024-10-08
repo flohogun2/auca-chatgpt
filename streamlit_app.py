@@ -48,6 +48,11 @@ import os
 schedule = {}
 today = datetime.now()
 tomorow = datetime.now() + timedelta(days=1)
+tomorowplus1 = datetime.now() + timedelta(days=2)
+tomorowplus2 = datetime.now() + timedelta(days=3)
+tomorowplus3 = datetime.now() + timedelta(days=4)
+tomorowplus4 = datetime.now() + timedelta(days=5)
+tomorowplus5 = datetime.now() + timedelta(days=6)
 hours = (9, 17)   # open hours
 
 limit1 = datetime.strptime("10:00:00", "%H:%M:%S").time()
@@ -482,6 +487,11 @@ Instructions:
 - Si l'utilisateur n'a pas fourni le jour, le mois en indiquant l'heure du rendez-vous souhaité, vous devrez alors demander des éclaircissements.
 - Si l'utilisateur n'a pas fourni l'année en indiquant l'heure du rendez-vous souhaité, l'année est alors {date.today().strftime("%Y")}
 - Si l'utilisateur veut un rendez-vous {day_list[tomorow.weekday()]} alors demander si il s'agit de demain.
+- Si l'utilisateur veut un rdv {day_list[tomorowplus1.weekday()]} alors demander si il s'agit de {tomorowplus1.strftime("%d/%m/%Y")}.
+- Si l'utilisateur veut un rdv {day_list[tomorowplus2.weekday()]} alors demander si il s'agit de {tomorowplus2.strftime("%d/%m/%Y")}.
+- Si l'utilisateur veut un rdv {day_list[tomorowplus3.weekday()]} alors demander si il s'agit de {tomorowplus3.strftime("%d/%m/%Y")}.
+- Si l'utilisateur veut un rdv {day_list[tomorowplus4.weekday()]} alors demander si il s'agit de {tomorowplus4.strftime("%d/%m/%Y")}.
+- Si l'utilisateur veut un rdv {day_list[tomorowplus5.weekday()]} alors demander si il s'agit de {tomorowplus5.strftime("%d/%m/%Y")}.
 
 Assurez-vous de suivre attentivement les instructions lors du traitement de la demande.
 
