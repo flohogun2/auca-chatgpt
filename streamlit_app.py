@@ -48,7 +48,11 @@ import os
 schedule = {}
 today = datetime.now()
 hours = (9, 17)   # open hours
-print(os.environ)
+
+limit1 = datetime.strptime("10:00:00", "%H:%M:%S").time()
+limit2 = datetime.strptime("17:00:00", "%H:%M:%S").time()
+limit3 = datetime.strptime("12:00:00", "%H:%M:%S").time()
+day_list = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche']
 
 API_KEY = st.secrets["API_KEY"]
 
@@ -65,7 +69,7 @@ def dayOfWeek(date):
             theDate = parser.parse(date)
         except:
             return 'invalid date format, please use format: dd/mm/yy'
-        
+        return day_list[date.today().theDate.weekday()]
         return calendar.day_name[theDate.weekday()]
     
 #########
@@ -152,11 +156,6 @@ memory = ConversationBufferMemory(memory_key="chat_history")
 ChatOpenAI.api_key = API_KEY
 client = ChatOpenAI(openai_api_key=API_KEY)
 GPT_MODEL = "gpt-3.5-turbo-instruct"
-
-limit1 = datetime.strptime("10:00:00", "%H:%M:%S").time()
-limit2 = datetime.strptime("17:00:00", "%H:%M:%S").time()
-limit3 = datetime.strptime("12:00:00", "%H:%M:%S").time()
-day_list = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche']
 
 def appointment_booking(arguments):
     try:
