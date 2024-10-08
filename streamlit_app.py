@@ -69,7 +69,7 @@ def dayOfWeek(date):
             theDate = parser.parse(date)
         except:
             return 'invalid date format, please use format: dd/mm/yy'
-        return day_list[date.today().theDate.weekday()]
+        return day_list[theDate.weekday()]
         return calendar.day_name[theDate.weekday()]
     
 #########
