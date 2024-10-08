@@ -507,7 +507,7 @@ prompt = ChatPromptTemplate.from_messages([
     MessagesPlaceholder(variable_name="agent_scratchpad")
     ])
 
-llm = ChatOpenAI(model="gpt-3.5-turbo-0125",
+llm = ChatOpenAI(model="gpt-4-turbo-preview",
                  temperature=0.0,
                  api_key=API_KEY
                  )
