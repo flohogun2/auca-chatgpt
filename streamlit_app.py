@@ -156,7 +156,7 @@ GPT_MODEL = "gpt-3.5-turbo-instruct"
 limit1 = datetime.strptime("10:00:00", "%H:%M:%S").time()
 limit2 = datetime.strptime("17:00:00", "%H:%M:%S").time()
 limit3 = datetime.strptime("12:00:00", "%H:%M:%S").time()
-day_list = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+day_list = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche']
 
 def appointment_booking(arguments):
     try:
