@@ -582,7 +582,8 @@ if st.button('Valider'):
     if chat_response['output']:
         st.markdown(chat_response['output'])
 
-   
+if st.button('Supprimer la conversation'):  
+    st.session_state.chat_history = [] 
 user_input = input("Please enter your question here: (if you want to exit then write 'exit' or 'bye'.) ")
 
 while user_input.strip().lower() != "exit" and user_input.strip().lower() != "bye":
